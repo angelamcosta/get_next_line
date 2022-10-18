@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 10:25:50 by anlima            #+#    #+#             */
-/*   Updated: 2022/10/17 19:22:06 by anlima           ###   ########.fr       */
+/*   Updated: 2022/10/18 15:19:43 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	if (len > ft_strlen((char *)s))
 		len = ft_strlen((char *)s);
-	subs = (char *)malloc(len);
+	subs = (char *)malloc(len + 1);
 	if (!subs)
 		return (NULL);
 	i = 0;
 	while (s[start] && i < len)
 		subs[i++] = s[start++];
+	subs[i] = '\0';
 	return (subs);
 }
 
@@ -65,6 +66,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*joined;
 	int		i;
 
+	if (!s1 && !s2)
+		return (NULL);
 	i = 0;
 	joined = malloc(ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1);
 	if (!joined)
