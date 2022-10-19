@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 10:24:04 by anlima            #+#    #+#             */
-/*   Updated: 2022/10/19 10:01:43 by anlima           ###   ########.fr       */
+/*   Updated: 2022/10/19 12:19:28 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ static void	ft_parse_line(char **line, char **next_line)
 	int		i;
 	char	*temp;
 
-	i = 0;
-	if (!*line || *line[0] == '\0')
+	if (*line == NULL || *line[0] == '\0')
 		return ;
-	while (*line[i] != '\0' && *line[i] != '\n')
-		i++;
-	if (*line[i] == '\n')
+	i = ft_strchr(*line, '\n');
+	if (i == -1)
+		i = ft_strchr(*line, '\0');
+	else
 		i++;
 	*next_line = ft_substr(*line, 0, i);
 	temp = ft_strdup(*line);
@@ -46,11 +46,11 @@ static void	ft_read(int fd, char **line)
 	char	*buf;
 	char	*temp;
 
-	buf = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
+	buf = (char *)malloc(BUFFER_SIZE + 1);
 	if (!buf)
 		return ;
 	len = read(fd, buf, BUFFER_SIZE);
-	temp = NULL; 
+	temp = NULL;
 	while (len > 0)
 	{
 		buf[len] = '\0';
@@ -74,8 +74,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	next_line = NULL;
 	ft_read(fd, &line);
-	if (!line || *line == '\0')
-		return (NULL);
-	ft_parse_line(&line, &next_line);
+	if (line != NULL && *line != '\0')
+		ft_parse_line(&line, &next_line);
 	return (next_line);
 }
