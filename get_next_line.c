@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 10:24:04 by anlima            #+#    #+#             */
-/*   Updated: 2022/10/18 15:18:31 by anlima           ###   ########.fr       */
+/*   Updated: 2022/10/19 10:01:43 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,13 @@ static void	ft_read(int fd, char **line)
 	if (!buf)
 		return ;
 	len = read(fd, buf, BUFFER_SIZE);
-	temp = NULL;
+	temp = NULL; 
 	while (len > 0)
 	{
 		buf[len] = '\0';
-		temp = ft_strjoin(*line, buf);
+		temp = ft_strdup(*line);
 		ft_str_free(*line);
-		*line = ft_strdup(ft_strjoin(temp, buf));
+		*line = ft_strjoin(temp, buf);
 		ft_str_free(temp);
 		if (ft_strchr(*line, '\n') >= 0)
 			break ;
