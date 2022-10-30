@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 10:24:04 by anlima            #+#    #+#             */
-/*   Updated: 2022/10/19 15:22:55 by anlima           ###   ########.fr       */
+/*   Updated: 2022/10/29 19:21:54 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	ft_parse_line(char **line, char **next_line)
 {
 	int		i;
 	char	*temp;
- 
+
 	i = ft_strchr(*line, '\n');
 	if (i == -1)
 		i = ft_strchr(*line, '\0');
