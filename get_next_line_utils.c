@@ -6,58 +6,22 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 10:25:50 by anlima            #+#    #+#             */
-/*   Updated: 2022/10/30 19:44:38 by anlima           ###   ########.fr       */
+/*   Updated: 2022/11/03 17:22:37 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-char	*ft_strdup(char *src)
-{
-	char	*copy;
-	int		i;
-
-	if (!src)
-		return (ft_strdup(""));
-	copy = malloc(ft_strlen(src) + 1);
-	if (!copy)
-		return (NULL);
-	i = -1;
-	while (src[++i])
-		copy[i] = src[i];
-	copy[i] = '\0';
-	return (copy);
-}
 
 size_t	ft_strlen(const char *str)
 {
 	int	i;
 
 	i = 0;
+	if (!str)
+		return (0);
 	while (str[i])
 		i++;
 	return (i);
-}
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char	*subs;
-	size_t	i;
-
-	if (!s)
-		return (NULL);
-	if (start > ft_strlen(s))
-		return (ft_strdup(""));
-	if (len > ft_strlen(&s[start]))
-		len = ft_strlen(&s[start]);
-	subs = (char *)malloc(len + 1);
-	if (!subs)
-		return (NULL);
-	i = 0;
-	while (s[start] && i < len)
-		subs[i++] = s[start++];
-	subs[i] = '\0';
-	return (subs);
 }
 
 char	*ft_strjoin(char const *s1, char const *s2)
@@ -65,8 +29,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*joined;
 	int		i;
 
-	if (!s1 || !s2)
-		return (NULL);
 	joined = malloc(ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1);
 	if (!joined)
 		return (NULL);
@@ -89,4 +51,48 @@ int	ft_strchr(const char *s, int c)
 	if (!s || s[i] != c)
 		return (-1);
 	return (i);
+}
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*subs;
+	size_t	i;
+
+	if (!s)
+		return (NULL);
+	if (start > ft_strlen(s))
+		return (NULL);
+	if (len > ft_strlen(&s[start]))
+		len = ft_strlen(&s[start]);
+	subs = (char *)malloc(len + 1);
+	if (!subs)
+		return (NULL);
+	i = 0;
+	while (s[start] && i < len)
+		subs[i++] = s[start++];
+	subs[i] = '\0';
+	return (subs);
+}
+
+void	ft_read(int fd, char **line)
+{
+	int		len;
+	char	*buf;
+	char	*temp;
+
+	buf = (char *)malloc(BUFFER_SIZE + 1);
+	if (!buf)
+		return ;
+	len = read(fd, buf, BUFFER_SIZE);
+	temp = NULL;
+	while (len > 0)
+	{
+		buf[len] = '\0';
+		*line = ft_strjoin(temp, buf);
+		if (ft_strchr(*line, '\n') >= 0)
+			break ;
+		len = read(fd, buf, BUFFER_SIZE);
+	}
+	if (buf)
+		free(buf);
 }
