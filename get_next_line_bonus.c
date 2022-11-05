@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 10:24:04 by anlima            #+#    #+#             */
-/*   Updated: 2022/11/05 11:40:24 by anlima           ###   ########.fr       */
+/*   Updated: 2022/11/05 11:47:52 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static void	ft_str_free(char *s);
 static void	ft_parse_line(char **line, char **next_line);
@@ -18,15 +18,15 @@ static void	ft_read(int fd, char **line);
 
 char	*get_next_line(int fd)
 {
-	static char	*line = NULL;
+	static char	*line[OPEN_MAX];
 	char		*next_line;
 
 	if (fd < 0 || BUFFER_SIZE < 1)
 		return (NULL);
 	next_line = NULL;
-	ft_read(fd, &line);
-	if (line != NULL && *line != '\0')
-		ft_parse_line(&line, &next_line);
+	ft_read(fd, &line[fd]);
+	if (line[fd] != NULL && *line[fd] != '\0')
+		ft_parse_line(&line[fd], &next_line);
 	return (next_line);
 }
 
