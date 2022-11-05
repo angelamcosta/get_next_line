@@ -37,4 +37,4 @@ The subject of the project can be found in [this link](https://raw.githubusercon
 ## Tasks
 
 - :ballot_box_with_check: get_next_line
-- :white_large_square: Bonus Part (ongoing)
+- :ballot_box_with_check: Bonus Part
