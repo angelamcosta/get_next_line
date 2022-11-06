@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 10:24:04 by anlima            #+#    #+#             */
-/*   Updated: 2022/11/05 11:40:24 by anlima           ###   ########.fr       */
+/*   Updated: 2022/11/05 17:20:40 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ static void	ft_read(int fd, char **line)
 	char	*buf;
 	char	*temp;
 
+	if (ft_strchr(*line, '\n') >= 0)
+		return ;
 	buf = (char *)malloc(BUFFER_SIZE + 1);
 	if (!buf)
 		return ;

@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 10:25:50 by anlima            #+#    #+#             */
-/*   Updated: 2022/11/05 11:44:31 by anlima           ###   ########.fr       */
+/*   Updated: 2022/11/06 16:02:41 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*joined;
 	int		i;
 
-	if (!s1 || !s2)
-		return (NULL);
 	joined = malloc(ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1);
 	if (!joined)
 		return (NULL);
