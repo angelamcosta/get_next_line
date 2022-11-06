@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 10:25:50 by anlima            #+#    #+#             */
-/*   Updated: 2022/11/06 16:02:41 by anlima           ###   ########.fr       */
+/*   Updated: 2022/11/06 20:19:44 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ size_t	ft_strlen(const char *str)
 	int	i;
 
 	i = 0;
+	if (!str)
+		return (i);
 	while (str[i])
 		i++;
 	return (i);
@@ -47,7 +49,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	if (start > ft_strlen(s))
-		return (ft_strdup(""));
+		return (NULL);
 	if (len > ft_strlen(&s[start]))
 		len = ft_strlen(&s[start]);
 	subs = (char *)malloc(len + 1);

@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 10:24:04 by anlima            #+#    #+#             */
-/*   Updated: 2022/11/05 17:20:40 by anlima           ###   ########.fr       */
+/*   Updated: 2022/11/06 20:12:03 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,14 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE < 1)
 		return (NULL);
 	next_line = NULL;
-	ft_read(fd, &line);
-	if (line != NULL && *line != '\0')
+	if (ft_strchr(line, '\n') >= 0)
 		ft_parse_line(&line, &next_line);
+	else
+	{
+		ft_read(fd, &line);
+		if (line != NULL && *line != '\0')
+			ft_parse_line(&line, &next_line);
+	}
 	return (next_line);
 }
 
@@ -41,15 +46,13 @@ static void	ft_parse_line(char **line, char **next_line)
 	int		i;
 	char	*temp;
 
-	i = ft_strchr(*line, '\n');
-	if (i == -1)
+	i = ft_strchr(*line, '\n') + 1;
+	if (i <= 0)
 		i = ft_strchr(*line, '\0');
-	else
-		i++;
 	*next_line = ft_substr(*line, 0, i);
 	temp = ft_strdup(*line);
 	ft_str_free(*line);
-	*line = ft_substr(temp, i, ft_strlen(temp));
+	*line = ft_substr(&temp[i], 0, ft_strlen(&temp[i]));
 	ft_str_free(temp);
 }
 
@@ -59,19 +62,16 @@ static void	ft_read(int fd, char **line)
 	char	*buf;
 	char	*temp;
 
-	if (ft_strchr(*line, '\n') >= 0)
-		return ;
 	buf = (char *)malloc(BUFFER_SIZE + 1);
 	if (!buf)
 		return ;
 	len = read(fd, buf, BUFFER_SIZE);
-	temp = NULL;
 	while (len > 0)
 	{
 		buf[len] = '\0';
-		temp = ft_strdup(*line);
+		temp = ft_strjoin(*line, buf);
 		ft_str_free(*line);
-		*line = ft_strjoin(temp, buf);
+		*line = ft_strjoin(temp, "");
 		ft_str_free(temp);
 		if (ft_strchr(*line, '\n') >= 0)
 			break ;
