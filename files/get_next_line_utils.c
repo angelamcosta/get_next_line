@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 10:25:50 by anlima            #+#    #+#             */
-/*   Updated: 2022/11/06 20:18:45 by anlima           ###   ########.fr       */
+/*   Updated: 2022/11/06 20:23:37 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*subs;
 	size_t	i;
 
-	if (!s)
-		return (NULL);
-	if (start > ft_strlen(s))
+	if (!s || start > ft_strlen(s))
 		return (NULL);
 	if (len > ft_strlen(&s[start]))
 		len = ft_strlen(&s[start]);
