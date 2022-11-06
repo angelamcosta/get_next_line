@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 10:24:04 by anlima            #+#    #+#             */
-/*   Updated: 2022/11/06 20:21:50 by anlima           ###   ########.fr       */
+/*   Updated: 2022/11/06 21:59:41 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,12 @@ static void	ft_parse_line(char **line, char **next_line)
 	i = ft_strchr(*line, '\n') + 1;
 	if (i <= 0)
 		i = ft_strchr(*line, '\0');
+	if (i == -1)
+		return ;
 	*next_line = ft_substr(*line, 0, i);
-	temp = ft_strdup(*line);
+	temp = ft_strdup(&line[0][i]);
 	ft_str_free(*line);
-	*line = ft_substr(&temp[i], 0, ft_strlen(&temp[i]));
+	*line = ft_strdup(temp);
 	ft_str_free(temp);
 }
 
@@ -71,9 +73,9 @@ static void	ft_read(int fd, char **line)
 		buf[len] = '\0';
 		temp = ft_strjoin(*line, buf);
 		ft_str_free(*line);
-		*line = ft_strjoin(temp, "");
+		*line = ft_strdup(temp);
 		ft_str_free(temp);
-		if (ft_strchr(*line, '\n') >= 0)
+		if (ft_strchr(*line, '\n') > -1)
 			break ;
 		len = read(fd, buf, BUFFER_SIZE);
 	}

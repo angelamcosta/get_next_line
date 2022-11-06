@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 10:25:50 by anlima            #+#    #+#             */
-/*   Updated: 2022/11/06 20:23:22 by anlima           ###   ########.fr       */
+/*   Updated: 2022/11/06 22:02:57 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(char *src)
 	int		i;
 
 	if (!src)
-		return (ft_strdup(""));
+		return ("");
 	copy = malloc(ft_strlen(src) + 1);
 	if (!copy)
 		return (NULL);
