@@ -6,19 +6,15 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 10:24:04 by anlima            #+#    #+#             */
-/*   Updated: 2022/11/06 21:57:57 by anlima           ###   ########.fr       */
+/*   Updated: 2022/11/08 11:31:54 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static void	ft_str_free(char *s);
-static void	ft_parse_line(char **line, char **next_line);
-static void	ft_read(int fd, char **line);
-
 char	*get_next_line(int fd)
 {
-	static char	*line = NULL;
+	static char	*line;
 	char		*next_line;
 
 	if (fd < 0 || BUFFER_SIZE < 1)
@@ -35,49 +31,4 @@ char	*get_next_line(int fd)
 	return (next_line);
 }
 
-static void	ft_str_free(char *s)
-{
-	if (s)
-		free(s);
-}
 
-static void	ft_parse_line(char **line, char **next_line)
-{
-	int		i;
-	char	*temp;
-
-	i = ft_strchr(*line, '\n') + 1;
-	if (i <= 0)
-		i = ft_strchr(*line, '\0');
-	if (i == -1)
-		return ;
-	*next_line = ft_substr(*line, 0, i);
-	temp = ft_strdup(&line[0][i]);
-	ft_str_free(*line);
-	*line = ft_strdup(temp);
-	ft_str_free(temp);
-}
-
-static void	ft_read(int fd, char **line)
-{
-	int		len;
-	char	*buf;
-	char	*temp;
-
-	buf = (char *)malloc(BUFFER_SIZE + 1);
-	if (!buf)
-		return ;
-	len = read(fd, buf, BUFFER_SIZE);
-	while (len > 0)
-	{
-		buf[len] = '\0';
-		temp = ft_strjoin(*line, buf);
-		ft_str_free(*line);
-		*line = ft_strdup(temp);
-		ft_str_free(temp);
-		if (ft_strchr(*line, '\n') > -1)
-			break ;
-		len = read(fd, buf, BUFFER_SIZE);
-	}
-	ft_str_free(buf);
-}
