@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 10:24:04 by anlima            #+#    #+#             */
-/*   Updated: 2022/11/09 17:35:24 by anlima           ###   ########.fr       */
+/*   Updated: 2022/11/10 15:03:30 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 char	*get_next_line(int fd);
 char	*ft_strjoin(char *s1, char *s2);
-int		ft_strlen(char *s);
+size_t	ft_strlen(char *s);
 int		ft_strchr(char *s, char c);
 
 #endif
