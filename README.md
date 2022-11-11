@@ -6,7 +6,7 @@
 </div>
 
 <div align=center>
-  <img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/angelamcosta/get_next_line" /> <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/angelamcosta/get_next_line" /> <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/angelamcosta/get_next_line" /> <img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/angelamcosta/get_next_line" /> <img alt="GitHub Commit Activity (Week)" src="https://img.shields.io/github/commit-activity/w/angelamcosta/get_next_line" /> <img alt="Github License" src="https://img.shields.io/github/license/angelamcosta/get_next_line" /> <img alt="wakatime" src="https://wakatime.com/badge/user/0c29d5b3-c30b-4e1a-ad07-2da3bd4f7e05/project/154bda21-dcba-4f9b-903a-09cebb8771dd.svg" />
+  <img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/angelamcosta/get_next_line" /> <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/angelamcosta/get_next_line" /> <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/angelamcosta/get_next_line" /> <img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/angelamcosta/get_next_line" />  <img alt="Github License" src="https://img.shields.io/github/license/angelamcosta/get_next_line" /> <img alt="wakatime" src="https://wakatime.com/badge/user/0c29d5b3-c30b-4e1a-ad07-2da3bd4f7e05/project/154bda21-dcba-4f9b-903a-09cebb8771dd.svg" />
 </div>
 
 ## Table of Contents
