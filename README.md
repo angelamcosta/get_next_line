@@ -1,4 +1,4 @@
-# :page_facing_up: Get_next_line
+# :page_facing_up: Get_next_line [![anlima's 42 get_next_line Score](https://badge42.vercel.app/api/v2/cl9oe5ogt00110fm6h34z9iu9/project/2860461)](https://github.com/JaeSeoKim/badge42)
 
 <div align=center>
 
