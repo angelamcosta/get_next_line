@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 10:24:04 by anlima            #+#    #+#             */
-/*   Updated: 2022/11/11 15:27:32 by anlima           ###   ########.fr       */
+/*   Updated: 2022/11/14 15:24:54 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
 # ifndef  BUFFER_SIZE
 #  define  BUFFER_SIZE 1
 # endif
@@ -22,7 +23,6 @@
 char	*get_next_line(int fd);
 char	*ft_strjoin(char *s1, char *s2);
 size_t	ft_strlen(char *s);
-int		ft_strchr(char *s, char c);
-void	ft_strcpy(char *s1, char *s2);
+int		ft_clean(char *str);
 
 #endif

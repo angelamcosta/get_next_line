@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 10:25:50 by anlima            #+#    #+#             */
-/*   Updated: 2022/11/11 15:32:20 by anlima           ###   ########.fr       */
+/*   Updated: 2022/11/14 15:24:25 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,28 +52,16 @@ size_t	ft_strlen(char *s)
 	return (i);
 }
 
-int	ft_strchr(char *s, char c)
-{
-	int	i;
-
-	i = 0;
-	while (s && s[i] && s[i] != c)
-		i++;
-	if (s && s[i] && s[i] == c)
-		return (i);
-	return (-1);
-}
-
-int ft_clean(char *str)
+int	ft_clean(char *str)
 {
 	int	i;
 	int	j;
-	int is_nl;
+	int	is_nl;
 
 	i = 0;
 	j = 0;
 	is_nl = 0;
-	while(str[i])
+	while (str[i])
 	{
 		if (is_nl)
 			str[j++] = str[i];
