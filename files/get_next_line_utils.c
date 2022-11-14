@@ -64,12 +64,22 @@ int	ft_strchr(char *s, char c)
 	return (-1);
 }
 
-void	ft_strcpy(char *s1, char *s2)
+int ft_clean(char *str)
 {
-	size_t	i;
+	int	i;
+	int	j;
+	int is_nl;
 
-	i = -1;
-	while (s2[++i])
-		s1[i] = s2[i];
-	s1[i] = '\0';
+	i = 0;
+	j = 0;
+	is_nl = 0;
+	while(str[i])
+	{
+		if (is_nl)
+			str[j++] = str[i];
+		if (str[i] == '\n')
+			is_nl = 1;
+		str[i++] = '\0';
+	}
+	return (is_nl);
 }
