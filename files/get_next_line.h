@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 10:24:04 by anlima            #+#    #+#             */
-/*   Updated: 2022/11/14 15:24:54 by anlima           ###   ########.fr       */
+/*   Updated: 2022/11/15 16:29:47 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <limits.h>
 # ifndef  BUFFER_SIZE
 #  define  BUFFER_SIZE 1
 # endif
