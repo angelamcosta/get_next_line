@@ -19,7 +19,7 @@
 
 ## Introduction
 
-This aim of this project is to code a function that returns a line, read from a file descriptor and to learn about static variables.
+The aim of this project is to code a function that returns a line, read from a file descriptor and to learn about static variables.
 
 The subject of the project can be found in [this link](https://raw.githubusercontent.com/angelamcosta/get_next_line/main/en.subject.pdf).
 
