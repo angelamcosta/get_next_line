@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 10:24:04 by anlima            #+#    #+#             */
-/*   Updated: 2022/11/15 16:31:39 by anlima           ###   ########.fr       */
+/*   Updated: 2022/11/16 11:32:19 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ char	*get_next_line(int fd)
 	}
 	while (i > 0)
 	{
-		line[fd][i] = '\0';
 		next_line = ft_strjoin(next_line, line[fd]);
 		if (ft_clean(line[fd]) > 0)
 			break ;
