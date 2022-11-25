@@ -6,7 +6,7 @@
 /*   By: anlima <anlima@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 10:24:04 by anlima            #+#    #+#             */
-/*   Updated: 2022/11/16 11:32:13 by anlima           ###   ########.fr       */
+/*   Updated: 2022/11/25 12:05:18 by anlima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*get_next_line(int fd)
 	if (ft_clean(line) > 0)
 		return (next_line);
 	i = read(fd, line, BUFFER_SIZE);
-	if (i < 0 || (i == 0 && (!next_line || *next_line == '\0')))
+	if (i < 0)
 	{
 		free(next_line);
 		return (NULL);
