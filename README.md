@@ -15,7 +15,7 @@
 
 - [Introduction](#introduction)
 - [Mandatory part](#mandatory-part)
-  - [Get_next_line](#get_next_line-1)
+  - [Get_next_line](#get_next_line)
   - [Bonus part](#bonus-part)
 - [Tasks](#tasks)
 
