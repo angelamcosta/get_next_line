@@ -23,7 +23,7 @@
 
 The aim of this project is to code a function that returns a line, read from a file descriptor and to learn about static variables.
 
-The subject of the project can be found in [this link](https://raw.githubusercontent.com/angelamcosta/get_next_line/main/en.subject.pdf).
+The subject of the project can be found in [this link](https://raw.githubusercontent.com/angelamcosta/get_next_line/main/en.subject.pdf) and the wiki explaining my solution to this project can be found [here](https://github.com/angelamcosta/get_next_line/wiki).
 
 ## Mandatory part
 
