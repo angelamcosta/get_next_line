@@ -11,37 +11,54 @@
   <img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/angelamcosta/get_next_line" /> <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/angelamcosta/get_next_line" /> <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/angelamcosta/get_next_line" /> <img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/angelamcosta/get_next_line" />  <img alt="Github License" src="https://img.shields.io/github/license/angelamcosta/get_next_line" /> <img alt="wakatime" src="https://wakatime.com/badge/user/0c29d5b3-c30b-4e1a-ad07-2da3bd4f7e05/project/154bda21-dcba-4f9b-903a-09cebb8771dd.svg" />
 </div>
 
-## Table of Contents
+`get_next_line` is a function that reads a line from a file descriptor and returns it as a string. It allows reading text from the file descriptor one line at a time until the end of the file. The function is designed to mimic the behavior of the standard `getline()` function and provides a convenient way to read input from files or other sources.
 
-- [Introduction](#introduction)
-- [Mandatory part](#mandatory-part)
-  - [Get_next_line](#get_next_line)
-  - [Bonus part](#bonus-part)
-- [Tasks](#tasks)
+The subject of the project can be found in this [link](https://raw.githubusercontent.com/angelamcosta/get_next_line/main/en.subject.pdf) and the wiki explaining my solution to this project can be found [here](https://github.com/angelamcosta/get_next_line/wiki).
 
-## Introduction
+## ⚙️ Features
+- Read a line from a file descriptor
+- Returns the line as a string
+- Supports reading from multiple file descriptors
 
-The aim of this project is to code a function that returns a line, read from a file descriptor and to learn about static variables.
+## 🚀 Usage
+To use the `get_next_line` function in your project, follow these steps:
 
-The subject of the project can be found in [this link](https://raw.githubusercontent.com/angelamcosta/get_next_line/main/en.subject.pdf) and the wiki explaining my solution to this project can be found [here](https://github.com/angelamcosta/get_next_line/wiki).
+1. Copy the following files into your project directory:
+   - `get_next_line.c`
+   - `get_next_line_utils.c`
+   - `get_next_line.h`
 
-## Mandatory part
+2. Include the `get_next_line.h` header file in your source code:
+   ```c
+   #include "get_next_line.h"
+   ```
 
-###  Get_next_line
+3. Call the `get_next_line` function to read lines from a file descriptor.
 
-- :ballot_box_with_check: get_next_line
+## 🎉 Bonus (Optional)
+The bonus part of the project aims to enhance the functionality of `get_next_line`. To complete the bonus part, make sure the mandatory part is perfect and then implement the following:
 
-### Bonus part
+- Use a single static variable to succeed `get_next_line`.
+- Manage multiple file descriptors, allowing reading from different file descriptors without losing the reading thread.
 
-<details open>
-<summary> Bonus part </summary>
+## 📗 External Functions
+- `read`: Used to read data from the file descriptor.
+- `malloc`: Used to allocate memory dynamically.
+- `free`: Used to free allocated memory.
 
-- To succeed get_next_line with a single static variable.
-- To be able to manage multiple file descriptors with your get_next_line. For example, if the file descriptors 3, 4 and 5 are accessible for reading, then you can call get_next_line once on 3, once on 4, once again on 3 then once on 5 etc. without losing the reading thread on each of the descriptors.
+## 🚫 Restrictions
+- The use of the `libft` library is not allowed for this project.
+- The `lseek` function is not allowed. File reading must be done only once.
+- `get_next_line` may have undefined behavior when reading from a binary file.
 
-</details>
+## 🗄️ Resources
+For more information on `get_next_line` and related concepts, you can refer to the following resources:
 
-## Tasks
+- [Wikipedia - Static Variable](https://en.wikipedia.org/wiki/Static_variable)
+- `man` pages:
+  - `man 3 get_next_line`
+  - `man 3 read`
+  - `man 3 malloc`
+  - `man 3 free`
 
-- :ballot_box_with_check: get_next_line
-- :ballot_box_with_check: Bonus Part
+**Note:** The `BUFFER_SIZE` macro can be modified to adjust the buffer size used for reading. However, during evaluation, the value will be modified to test different buffer sizes.
