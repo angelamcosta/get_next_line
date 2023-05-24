@@ -56,7 +56,6 @@ For more information on `get_next_line` and related concepts, you can refer to t
 
 - [Wikipedia - Static Variable](https://en.wikipedia.org/wiki/Static_variable)
 - `man` pages:
-  - `man 3 get_next_line`
   - `man 3 read`
   - `man 3 malloc`
   - `man 3 free`
