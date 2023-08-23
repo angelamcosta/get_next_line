@@ -4,7 +4,7 @@
 
   ![badge](https://raw.githubusercontent.com/angelamcosta/angelamcosta/main/42_badges/get_next_linee.png)
 
-  [![forthebadge](https://forthebadge.com/images/badges/made-with-c.svg)](https://forthebadge.com)  [![forthebadge](https://forthebadge.com/images/badges/built-with-resentment.svg)](https://forthebadge.com) [![anlima's 42 get_next_line Score](https://badge42.vercel.app/api/v2/cl9oe5ogt00110fm6h34z9iu9/project/2860461)](https://github.com/JaeSeoKim/badge42)
+  [![anlima's 42 get_next_line Score](https://badge42.vercel.app/api/v2/cl9oe5ogt00110fm6h34z9iu9/project/2860461)](https://github.com/JaeSeoKim/badge42)
 </div>
 
 <div align=center>
